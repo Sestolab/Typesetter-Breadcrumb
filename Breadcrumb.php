@@ -9,8 +9,7 @@ class Breadcrumb{
 	function __construct(){
 		global $gp_menu, $page, $addonPathData;
 
-		if(file_exists($addonPathData.'/config.php'))
-			include_once  $addonPathData.'/config.php';
+		$config = \gpFiles::Get($addonPathData.'/config.php', 'config');
 
 		$items = array(
 			'Bootstrap' => array(
